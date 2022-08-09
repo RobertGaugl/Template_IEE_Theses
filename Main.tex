@@ -1,0 +1,215 @@
+%===============================================================================
+%
+% Main.tex
+%
+% Autor: Robert Gaugl
+%
+% Inhalt: Dieses File beinhaltet alle usepackages und Dokumenteinstellungen,
+%         sowie die Aufrufe der einzelnen Unterkapitel
+%
+%===============================================================================
+
+
+%===============================================================================
+% Definition der Dokumenteigenschaften
+% (A4 Papiergröße, Formeln linksbündig ausrichten, Header und Footer Linie, 
+% Schriftgröße 12)
+\documentclass[a4paper,fleqn,headsepline,footsepline,12pt, parskip=half]{scrartcl}
+% Definiere Größe des Contentbereiches
+\areaset{16cm}{27cm}
+
+%===============================================================================
+% Aufruf der verschiedenen usapackages
+
+% Neue deutsche Silbentrennung und in Folge deutsche Begriffe wie 
+% Inhaltsverzeichnis
+\usepackage[ngerman]{babel}
+
+% Um leere Seiten einzufügen
+\usepackage{afterpage}
+\newcommand{\blankpage}{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage}
+
+% Mathematikpaket für zB Binimonalformeln
+\usepackage[]{amsmath}
+
+% Verhindern von 'Hurenkindern' (einzelne Zeile eines Absatzes am Anfang einer % Seite) und 'Schusterjungen' (Einzelne Zeile eines Absatzes am Ende einer Seite)
+\clubpenalty = 10000
+\widowpenalty = 10000
+\interlinepenalty = 10000
+
+% Definition der Zeichencodierung
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% When using babel or polyglossia with biblatex, loading csquotes is recommended 
+% to ensure that quoted texts are typeset according to the rules of your main 
+% language.
+\usepackage{csquotes}
+
+% Für Euro Symbol --> \euro
+\usepackage{eurosym}
+
+% chemische Abkürzungen
+\usepackage[version=4]{mhchem}
+
+% Bilder an der exakten Position darstellen
+\usepackage{float}
+
+% Zum Erstellen des Literaturverzeichnisses
+\usepackage[backend = biber,
+style=ieee, % Zitierstil
+sorting=none, % Sortierung nach Vorkommen im Text
+natbib=true, % Bereitstellen von natbib-kompatiblen Zitierkommandos
+hyperref=true, % hyperref-Paket verwenden, um Links zu erstellen
+maxbibnames = 3, % nur die ersten drei Autoren anzeigen 
+dashed=false, % Autoren immer anzeigen
+]{biblatex}
+\DefineBibliographyStrings{german}{
+  andothers = {et al}
+}
+
+%Vermeiden von über den Rand ragenden Links im Literaturverzeichnis
+\usepackage{url}
+\setcounter{biburlnumpenalty}{100}
+\setcounter{biburlucpenalty}{100}
+\setcounter{biburllcpenalty}{100}
+
+% Einbinden der bib-Datei
+\addbibresource{./Literatur.bib} 
+
+% Package for adding To-Do's
+\usepackage{todonotes}
+
+% Paket für Farben im Text
+\usepackage{color} 
+
+% Pakete für Tabellen
+\usepackage{colortbl} 
+\usepackage{hhline} 
+\usepackage{multirow} 
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+% Wenn Bilder eingefügt werden sollen muss das drinstehen
+\usepackage{graphicx} 
+
+% Definition des Zeilenabstandes
+\usepackage[onehalfspacing]{setspace}
+
+% Packet für Anzeige der Referenzen im PDF - Browser
+\usepackage[pdfborder={0 0 0}]{hyperref}
+
+% Einrückung von Formeln
+\setlength{\mathindent}{1cm}
+
+% Bis zu welcher Gliederungsebene soll nummeriert werden
+\setcounter{secnumdepth}{5}
+
+% Welche Ebenen sollen ins Inhaltsverzeichnis
+\setcounter{tocdepth}{3}
+
+% Prozedur zur kapitelweisen Beschriftung von Gleichungen
+\makeatletter 
+\@addtoreset{equation}{section} 
+\renewcommand \theequation
+  {\ifnum \c@section >\z@ \thesection.\fi
+  \@arabic \c@equation } 
+\makeatother 
+
+% Theorem für Beispielumgebungen
+\newtheorem{Beispiel}{Beispiel}[section] 
+
+% Prozedur zur kapitelweisen Beschriftung von Bildern
+\makeatletter 
+\@addtoreset{figure}{section} 
+\renewcommand \thefigure
+  {\ifnum \c@section >\z@ \thesection.\fi
+  \@arabic \c@figure } 
+\makeatother 
+
+% Prozedur zur kapitelweisen Beschriftung von Tabellen
+\makeatletter 
+\@addtoreset{table}{section} 
+\renewcommand \thetable
+  {\ifnum \c@section >\z@ \thesection.\fi
+  \@arabic \c@table } 
+\makeatother 
+
+%===============================================================================
+%Jetzt beginnt das eigentliche Dokument
+
+\begin{document}
+	
+	%===========================================================================
+	% Pre-content Seiten
+	
+	% Titelseite
+	\input{Kapitel/A01_Titelseite}	
+	\blankpage
+	
+	% Ausschalten der Kopf- und Fußzeilen und Seitennummerierung auf römische 
+	% Zahlen setzen
+	\pagestyle{plain}
+	\pagenumbering{roman}
+	
+	% Eidesstaatliche Erklärung
+	\input{Kapitel/A02_Eidesstaatliche_Erklaerung}
+	\newpage
+	
+	% Danksagung
+	\input{Kapitel/A03_Danksagung}
+	\newpage
+	
+	% Kurzfassung
+	\input{Kapitel/A04_Kurzfassung}
+	\newpage
+
+	% Inhaltsverzeichnis
+	\input{Kapitel/A05_Inhaltsverzeichnis}
+	\newpage
+	
+	%===========================================================================
+	% Eigentlicher Inhalt
+	
+	% Einschalten der Kopf- und Fußzeilen und Seitennummerierung auf arabische
+	% Zahlen setzen
+	\pagestyle{headings}
+	\pagenumbering{arabic}
+	
+	% Kapitel Einleitung
+	\input{Kapitel/B01_Einleitung}
+	\newpage
+	
+	% Kapitel Leitfaden zum Verfassen von Abschlussarbeiten
+	\input{Kapitel/B02_Leitfaden zum Verfassen von Abschlussarbeiten}
+	\newpage
+	
+	% Kapitel Datenquellen
+	\input{Kapitel/B02_Datenquellen}
+	\newpage
+	
+	% Kapitel Quellenangaben
+	\input{Kapitel/B03_Quellenangaben}
+	\newpage
+	
+	% Kapitel Zusammenfassung
+	\input{Kapitel/B04_Zusammenfassung}
+	\newpage
+	
+	%===========================================================================
+	% Verzeichnisse
+	
+	%Abkürzungsverzeichnis
+	% Setze Kopfzeile auf Abkürzungsverzeichnis
+	\pagestyle{myheadings}\markright{Abkürzungsverzeichnis}
+	\input{Kapitel/C01_Abkuerzungsverzeichnis}
+	\newpage
+	
+	% Abbildungsverzeichnis, TabeLiteraturverzeichnis & Literaturverzeichnis
+	\input{Kapitel/C02_Literaturverzeichnis}
+	
+\end{document}

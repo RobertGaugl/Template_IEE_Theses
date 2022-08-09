@@ -1,0 +1,43 @@
+%===============================================================================
+%
+% Erklärung
+%
+% Autor: Robert Gaugl
+%
+% Inhalt: Dieses Textdokument enthält ein paar Erklärungen zur LaTeX-Vorlage.
+%
+%===============================================================================
+
+Die LaTeX-Vorlage wurde mit TeXstudio erstellt. Sollte jedoch auch mit anderen
+LaTeX-Editoren funktionieren.
+
+%===============================================================================
+% Generelle Anmerkungen
+
+Als Textcodierung sollte UTF-8 im Editor deines Vertrauens eingestellt werden.
+
+Damit die Quellenverwaltung funktioniert, muss der Editor auf "Biber" 
+eingestellt sein.
+In TeXstudio wird dies folgendermassen eingestellt: 
+Menü Optionen -> TeXshop konfigurieren auswählen. In der Seitenleiste "Erzeugen" 
+anklicken und bei "Standard Bibliographieprogramm" "Biber" auswählen.
+In anderen Editoren bitte selber googeln wie die Umstellung vorgenommen wird!
+
+%===============================================================================
+% Zum Aufbau
+
+Alle Haupteinstellungen wie Seitenformateinstellungen und inkludierte Packages
+sind in der Main.tex-Datei zu finden. In dieser werden auch die jeweiligen 
+Unterkapitel aufgerufen.
+Die Unterkapitel befinden sich um Ordner Kapitel gliedern sich in 3 Hauptblöcke:
+- AXX_: Diese Kapitel beinhalten Pre-Content Inhalte (Titelseite, 
+        Eidesstaatliche Erklärung, Danksagung, Kurzfassung, Inhaltsverzeichnis)
+- BXX_: Hauptinhalte der Arbeit.
+- CXX_: Diese Kapitel beinhalten After-Content Inhalte (Abkürzungsverzeichnis, 
+        Literaturverzeichnis, evt. Anhang)
+
+%===============================================================================
+% Schreiben der Arbeit
+
+Bitte unbedingt die Vorlage vorher einmal durchlesen. Darin sind einige 
+Grundregeln zum Verfassen der Arbeit und Tipps niedergeschrieben.
