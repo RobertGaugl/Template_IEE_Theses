@@ -3,7 +3,7 @@ Template for bachelor and master theses written at the IEE.
 
 
 <p align="center">
-  <img src="Abbildungen/Front_page_master_thesis.png" alt="Front_page_master_thesis" width="40%" /></br>
+  <img src="Abbildungen/Front_page.png" alt="Front_page" width="40%" /></br>
   <b>Figure 1.</b> Front page of the template.
 </p>
 
