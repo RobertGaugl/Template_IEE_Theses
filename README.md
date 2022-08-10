@@ -10,7 +10,7 @@ Template for bachelor and master theses written at the IEE.
 ## How to use?
 1) Download the ZIP file using the green 'Code' button
 2) Extract the ZIP file
-3) Use the files in your prefered LaTeX editor (we recommend using Overleaf)
+3) Use the files in your preferred LaTeX editor (we recommend using Overleaf)
 4) Read the content of the template carefully. It explains the rules for writing a bachelor's or master's thesis at the IEE and provides helpful tips and tricks.
 
 ## Release Notes
