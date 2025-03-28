@@ -85,7 +85,10 @@ dashed=false, % Autoren immer anzeigen
 \usepackage{todonotes}
 
 % Paket für Farben im Text
-\usepackage{color} 
+\usepackage{xcolor}
+% Definiere Farbe für Änderungen nach Korrektur
+\definecolor{blue}{rgb}{0,0,1}
+\newcommand{\rev}[1]{\textcolor{blue}{#1}}
 
 % Pakete für Tabellen
 \usepackage{colortbl} 
