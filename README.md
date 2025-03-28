@@ -14,4 +14,5 @@ Template for bachelor and master theses written at the IEE.
 4) Read the content of the template carefully. It explains the rules for writing a bachelor's or master's thesis at the IEE and provides helpful tips and tricks.
 
 ## Release Notes
-**2022-08-09:** Fixed a bug that caused missing page breaks and empty pages
+- **2025-03-28:** Update the title page to include the name of the degree program.
+- **2022-08-09:** Fixed a bug that caused missing page breaks and empty pages
