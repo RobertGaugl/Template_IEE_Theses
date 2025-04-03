@@ -31,7 +31,7 @@ sind in der Main.tex-Datei zu finden. In dieser werden auch die jeweiligen
 Unterkapitel aufgerufen.
 Die Unterkapitel befinden sich um Ordner Kapitel gliedern sich in 3 Hauptblöcke:
 - AXX_: Diese Kapitel beinhalten Pre-Content Inhalte (Titelseite, 
-        Eidesstaatliche Erklärung, Danksagung, Kurzfassung, Inhaltsverzeichnis)
+        Danksagung, Kurzfassung, Inhaltsverzeichnis)
 - BXX_: Hauptinhalte der Arbeit.
 - CXX_: Diese Kapitel beinhalten After-Content Inhalte (Abkürzungsverzeichnis, 
         Literaturverzeichnis, evt. Anhang)
