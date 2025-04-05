@@ -1,0 +1,38 @@
+% !TEX root = ../main.tex
+%===============================================================================
+% C02_Bibliography.tex
+%
+% Author: Robert Gaugl
+%
+% Content: Generating tables of figures, tables, and bibliography.
+%===============================================================================
+
+\pagestyle{headings}
+% List of Figures
+\listoffigures
+
+\ifthenelse{\equal{\documentlanguage}{german}}{
+    \addcontentsline{toc}{section}{Abbildungsverzeichnis}
+}{
+    \addcontentsline{toc}{section}{List of Figures}
+}
+
+\pagebreak
+
+\pagestyle{headings}
+% List of Tables
+\listoftables
+
+\ifthenelse{\equal{\documentlanguage}{german}}{
+    \addcontentsline{toc}{section}{Tabellenverzeichnis}
+}{
+    \addcontentsline{toc}{section}{List of Tables}
+}
+
+\pagebreak
+
+\pagestyle{headings}
+% References
+\printbibliography[
+heading=bibintoc
+]

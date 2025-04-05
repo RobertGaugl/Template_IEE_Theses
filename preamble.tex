@@ -1,0 +1,147 @@
+% !TEX root = ./main.tex
+%===============================================================================
+% preamble.tex
+%
+% Author: Robert Gaugl
+%
+% Content: Contains all usepackage declarations and document settings
+%===============================================================================
+
+%===============================================================================
+% If-then package
+%===============================================================================
+\usepackage{ifthen}
+
+%===============================================================================
+% Language and typography
+%===============================================================================
+\ifthenelse{\equal{\documentlanguage}{german}}{
+    \usepackage[ngerman]{babel}       % German hyphenation and terms
+}{
+    \usepackage[english]{babel}       % English hyphenation and terms
+}
+
+\usepackage{csquotes}                 % Recommended with babel + biblatex
+\usepackage{microtype}                % Improves typography: better kerning, protrusion, spacing
+\usepackage{lmodern}                  % Improved font rendering
+
+%===============================================================================
+% Math and formatting
+%===============================================================================
+\usepackage{amsmath}                  % Advanced math features
+\setlength{\mathindent}{1cm}          % Indentation of equations
+\usepackage[onehalfspacing]{setspace} % Line spacing
+
+% Prevent widows and orphans
+\clubpenalty     = 10000
+\widowpenalty    = 10000
+\interlinepenalty= 10000
+
+%===============================================================================
+% Graphics and tables
+%===============================================================================
+\usepackage{graphicx}                 % Include images
+\usepackage{float}                    % Precise figure placement
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\ifthenelse{\equal{\documentlanguage}{german}}{
+    \sisetup{
+        output-decimal-marker = {,},  % use comma as decimal separator
+        group-separator = {.},        % use dot as thousand separator
+        group-minimum-digits = 4,     % format large numbers
+        group-digits=integer
+    }
+}{
+    \sisetup{
+        output-decimal-marker = {.},  % use comma as decimal separator
+        group-separator = {~},        % use space as thousand separator
+        group-minimum-digits = 4,     % optional: format large numbers
+        group-digits=integer
+    }
+}
+\DeclareSIUnit \watthour { Wh } %apparent power 
+
+
+%===============================================================================
+% Chemistry and symbols
+%===============================================================================
+\usepackage[version=4]{mhchem}        % Chemical symbols
+\usepackage{eurosym}                  % Euro symbol: \euro
+
+%===============================================================================
+% Colors and custom commands
+%===============================================================================
+\usepackage{xcolor}                   % Text colors
+\definecolor{blue}{rgb}{0,0,1}        % Revision color
+\newcommand{\rev}[1]{\textcolor{blue}{#1}}
+
+%===============================================================================
+% Hyperlinks and PDF metadata
+%===============================================================================
+\usepackage[pdfborder={0 0 0}]{hyperref}
+\usepackage{url}
+\PassOptionsToPackage{hyphens}{url}   % Allow line breaks in URLs
+
+%===============================================================================
+% Bibliography
+%===============================================================================
+\usepackage[
+  backend      = biber,
+  style        = ieee,
+  sorting      = none,
+  natbib       = true,
+  hyperref     = true,
+  maxbibnames  = 3,
+  dashed       = false
+]{biblatex}
+\addbibresource{./Literature.bib}
+
+\DefineBibliographyStrings{german}{
+  andothers = {et al.}
+}
+
+% Avoid broken links in bibliography
+\setcounter{biburlnumpenalty}{100}
+\setcounter{biburlucpenalty}{100}
+\setcounter{biburllcpenalty}{100}
+
+%===============================================================================
+% To-Do notes
+%===============================================================================
+\usepackage{todonotes}
+
+%===============================================================================
+% Sectioning and numbering
+%===============================================================================
+\setcounter{secnumdepth}{5}          % Depth of numbered sections
+\setcounter{tocdepth}{3}             % Depth in table of contents
+
+% Numbering equations by section
+\makeatletter
+  \@addtoreset{equation}{section}
+  \renewcommand \theequation{\thesection.\arabic{equation}}
+  \@addtoreset{figure}{section}
+  \renewcommand \thefigure{\thesection.\arabic{figure}}
+  \@addtoreset{table}{section}
+  \renewcommand \thetable{\thesection.\arabic{table}}
+\makeatother
+
+%===============================================================================
+% Custom environments
+%===============================================================================
+\newtheorem{Beispiel}{Example}[section]
+
+%===============================================================================
+% Utility commands
+%===============================================================================
+\usepackage{afterpage}
+\newcommand{\blankpage}{
+  \null
+  \thispagestyle{empty}
+  \addtocounter{page}{-1}
+  \newpage
+}

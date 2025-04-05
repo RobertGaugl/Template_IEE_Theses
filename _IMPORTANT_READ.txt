@@ -1,0 +1,27 @@
+%===============================================================================
+% Explanation
+%
+% Author: Robert Gaugl
+%
+% Content: This text document contains a few explanations about the LaTeX 
+%          template.
+%===============================================================================
+
+The LaTeX template was created with Overleaf. TU Graz provides free Overleaf licenses, so it is strongly recommended to use Overleaf for your work. However, it should also work with other LaTeX editors.
+
+%===============================================================================
+% Structure
+
+At the top of the main.tex file, you'll find the Metadata section, where you need to configure several settings (e.g., specifying whether it's a Bachelor's or Master's thesis, selecting the language, which will affect the title page and other headers and formatting options). Additionally, you will need to enter your name, the title of your thesis, and other relevant information.
+
+Following the Metadata section, the main.tex file defines the page layout, loads the preamble.tex (which contains all the package definitions), and also includes the subsections.
+The subsections are in the folder chapters and are organized divided into 3 main blocks:
+- AXX_: These chapters contain pre-content (Title page, Acknowledgments, Abstract, Table of Contents).
+- BXX_: Main content of the work.
+- CXX_: These chapters contain after-content (Abbreviations, Bibliography, possibly Appendix).
+
+
+%===============================================================================
+% Writing the Thesis
+
+Please be sure to read the template before you begin. It includes essential guidelines for writing your thesis, along with helpful tips.

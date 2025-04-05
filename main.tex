@@ -1,0 +1,108 @@
+%===============================================================================
+% main.tex
+%
+% Author: Robert Gaugl
+%
+% Content: This file loads all packages and document settings,
+%          and calls the individual subchapters
+%===============================================================================
+
+%===============================================================================
+% Metadata (AJUST!)
+%===============================================================================
+
+% Language Selection: Uncomment one to select the language (this will also adjust the title page
+\newcommand{\documentlanguage}{english}
+%\newcommand{\documentlanguage}{german}
+
+\newcommand{\thesistype}{Master} % Change to "Bachelor" to adapt title page for Bachelor's thesis
+
+\newcommand{\thesistitle}{Title of the Thesis} % Title of Thesis
+\newcommand{\thesisauthor}{First Last Name} % Your name
+\newcommand{\supervisor}{Supervisor Name} % Name of supervisor (Betreuer)
+\newcommand{\reviewer}{Reviewer Name} % Only for Master's; Name of reviewer (Beurteiler)
+\newcommand{\studyprogram}{Electrical and Electronics Engineering} % Name of study programme
+\newcommand{\submissionmonth}{April} % Month
+\newcommand{\submissionyear}{2025} % Year
+
+%===============================================================================
+% Document properties
+% A4 paper size, left-aligned equations, header/footer lines, 12pt font
+%===============================================================================
+\documentclass[a4paper, fleqn, headsepline, footsepline, 12pt, parskip=half]{scrartcl}
+
+% Define content area size
+\areaset{16cm}{27cm}
+
+%===============================================================================
+% Load packages
+%===============================================================================
+
+\input{preamble} % Load preamble with packages and settings
+
+%===============================================================================
+% Start of the actual document
+%===============================================================================
+\begin{document}
+    %===========================================================================
+    % Pre-content pages (front matter)
+    %===========================================================================
+
+    % Title page
+    \include{chapters/A01_Title_page}
+    \blankpage
+
+    % Disable headers and footers, use Roman page numbers for front matter
+    \pagestyle{plain}
+    \pagenumbering{roman}
+
+    % Acknowledgements
+    \include{chapters/A02_Acknowledgements}
+    \newpage
+
+    % Abstract
+    \include{chapters/A03_Abstract}
+    \newpage
+
+    % Table of contents
+    \include{chapters/A04_Table_of_content}
+    \newpage
+
+    %===========================================================================
+    % Main content (body of the document)
+    %===========================================================================
+
+    % Enable headers/footers and switch to Arabic page numbers
+    \pagestyle{headings}
+    \pagenumbering{arabic}
+
+    % Chapter: Introduction
+    \include{chapters/B01_Introduction}
+
+    % Chapter: Guide to Writing a Thesis
+    \include{chapters/B02_Guide_to_writing_theses}
+
+    % Chapter: Data Sources
+    \include{chapters/B03_Data_sources}
+
+    % Chapter: References / Citation Guidelines
+    \include{chapters/B04_References}
+
+    % Chapter: Revisions
+    \include{chapters/B05_Revisions}
+
+    % Chapter: Conclusion / Summary
+    \include{chapters/B06_Conclusion}
+
+    %===========================================================================
+    % Appendices and Lists
+    %===========================================================================
+
+    % Abbreviations
+    \pagestyle{myheadings}\markright{Abbreviations}
+    \include{chapters/C01_List_of_abbreviations}
+
+    % Figures, Tables, and Bibliography
+    \include{chapters/C02_Bibliography}
+
+\end{document}

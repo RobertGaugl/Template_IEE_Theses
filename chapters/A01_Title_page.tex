@@ -1,0 +1,88 @@
+% !TEX root = ../main.tex
+%===============================================================================
+% A01_Title_page.tex
+%
+% Author: Robert Gaugl
+%
+% Content: Title page of the document
+%===============================================================================
+
+\pagestyle{empty}
+\enlargethispage*{23cm}
+
+% Define bilingual static text
+\ifthenelse{\equal{\documentlanguage}{english}}{
+    \ifthenelse{\equal{\thesistype}{Bachelor}}{
+        \newcommand{\thesisdegree}{Bachlor's Thesis}
+        \newcommand{\degreeinfoFull}{Bachelor of Science}
+        \newcommand{\programinfo}{Bachelor's degree programme}
+    }{
+        \newcommand{\thesisdegree}{Master's Thesis}
+        \newcommand{\degreeinfoFull}{Diplom-Ingenieur}
+        \newcommand{\programinfo}{Master's degree programme}
+    }
+    \newcommand{\textone}{to achieve the university degree of}
+    \newcommand{\texttwo}{submitted to}
+    \newcommand{\universityinfo}{Graz University of Technology}
+    \newcommand{\textthree}{Supervisor}
+    \newcommand{\textfour}{Reviewer}
+    \newcommand{\instituteinfo}{Institute of Electricity Economics and Energy Innovation}
+    \newcommand{\submissiontext}{Graz, \submissionmonth~\submissionyear}
+}{
+    \ifthenelse{\equal{\thesistype}{Bachelor}}{
+        \newcommand{\thesisdegree}{Bachelorarbeit}
+        \newcommand{\degreeinfoFull}{Bachelor of Science}
+        \newcommand{\programinfo}{Bachelorstudium}
+    }{
+        \newcommand{\thesisdegree}{Masterarbeit}
+        \newcommand{\degreeinfoFull}{Diplom-Ingenieur}
+        \newcommand{\programinfo}{Masterstudium}
+    }
+    \newcommand{\textone}{zur Erlangung des akademischen Grades}
+    \newcommand{\texttwo}{eingereicht an der}
+    \newcommand{\universityinfo}{Technische Universität Graz}
+    \newcommand{\textthree}{Betreuer}
+    \newcommand{\textfour}{Beurteiler}
+    \newcommand{\instituteinfo}{Institut für Elektrizitätswirtschaft und Energieinnovation}
+    \newcommand{\submissiontext}{Graz, \submissionmonth~\submissionyear}
+}
+
+\vspace*{-1.5cm}
+\begin{center}
+    \hspace*{-1.1cm}
+    \includegraphics[width=3.3cm]{figures/TU_Graz_Logo.pdf}
+    
+    \vspace*{1.5cm}
+    
+    {\normalsize \textbf{\thesisauthor\\}}
+    
+    \vspace*{1.5cm} \LARGE\textbf{\thesistitle}\vspace*{1cm} \vfill
+    
+    \large{\textbf{\thesisdegree\\}}
+    
+    \vspace*{1cm}{\normalsize \textone\\}
+    {\normalsize \degreeinfoFull\\}
+
+    \vspace*{1cm}{\normalsize \programinfo\\}
+    {\normalsize \studyprogram\\}
+
+    \vspace*{1cm}{\normalsize \texttwo\\}
+    \large{\textbf{\universityinfo\\}}
+    
+    \vspace*{1.5cm}\large{\textbf{\textthree\\}}
+    {\normalsize \supervisor\\}
+
+    % Only for Master's theses
+    \ifthenelse{\equal{\thesistype}{Master}}{
+      \large{\textbf{\textfour\\}} % Only for Master's
+      {\normalsize \reviewer\\}
+    }    
+    
+    \vspace*{0.7cm}
+    \normalsize \instituteinfo\\
+    
+    \vspace*{1.5cm}\small{\textbf{\submissiontext\\}} \vspace*{.7cm}
+    
+\end{center}
+
+\clearpage

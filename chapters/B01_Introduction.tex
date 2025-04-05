@@ -1,0 +1,108 @@
+% !TEX root = ../main.tex
+%===============================================================================
+% B01_Introduction.tex
+%
+% Author: Robert Gaugl
+%
+% Content: Lorem Ipsum
+%===============================================================================
+
+\section{Introduction}
+\label{sec:introduction}
+
+This chapter aims to explain why your research question is of interest. In addition, general explanations regarding your thesis can be described here, or an overview of current technologies can be provided. A ToDo can be inserted with the command \textbackslash todo\{text\} \todo{This is a sample ToDo.}.
+
+
+%===============================================================================
+\subsection{Subchapter}
+\label{sec:subchapter}
+
+This is what a subchapter\footnote{Footnotes can be used to include details that are not important enough to be explained in the main text.} looks like.
+
+To avoid a mess of numbering like {\glqq}1.2.1.3.4.5 Subchapter 5{\grqq}, use a maximum of three (1.2.3 heading) to four (1.2.3.4 heading) digits in the heading numbering. In the table of contents, only headings with up to three digits will be displayed.
+
+
+%===============================================================================
+\subsubsection{Figures}
+\label{sec:figures}
+
+Figure~\ref{fig:Baum} shows an example of an image with a suitable caption. Every figure must also be described and referenced in the text. For non-original images, don’t forget the source citation. If a figure is created by yourself but based on data from another source, that must be indicated as well (data from [XY] or based on [XY]).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics{figures/tree.png}
+		\caption{This is a beautiful tree.}
+		\label{fig:Baum}
+	\end{center}
+\end{figure}
+
+
+%===============================================================================
+\subsubsection{Tables}
+\label{sec:tables}
+
+The design of a table is up to the bachelor's/master's student. However, it should be clearly legible and, if possible, have a consistent design throughout the document.
+
+If tables from the internet are used, they should be recreated and properly cited. Table~\ref{tab:Tabelle1} is an example of what a table might look like. Note how the numbers are neatly aligned at the decimal separator. This alignment is achieved using the siunitx package with the S[table-format=4.1] column specification, which in this case allows up to 4 digits before the comma and 1 digit after.
+
+At our institute, there is no fixed rule whether the table caption should be above or below the table. However, as with figures: every table must be described and referenced in the text.
+
+\begin{table}[H]
+	\centering 
+	\begin{tabular}{c S[table-format=1.1] S[table-format=1.0] S[table-format=2.2] S[table-format=4.1]}
+		\hline
+		\textbf{Scenarios} & \textbf{RAV [\%]} & \textbf{[\euro/MWh]} & \textbf{[Million \euro]} & \textbf{[\euro/MWh]} \\
+		\hline
+		\rowcolor[gray]{0.9}
+		Scenario 1 & 0,5 & 5 & 10,24 & 14,9 \\
+		Scenario 2 & 0,5 & 10 & 0,39 & 24,1 \\
+		\rowcolor[gray]{0.9}
+		Scenario 3 & 0,5 & 20 & 0,69 & 1042,8 \\
+		Scenario 4 & 1,0 & 5 & 0,33 & 120,5 \\
+		\hline \hline
+	\end{tabular}
+	\caption{This is a test table}\label{tab:Tabelle1}
+\end{table}
+
+
+%===============================================================================
+\subsubsection{Equations}
+\label{sec:equations}
+
+Unlike figures and tables, equation numbering is placed on the right side. Unlike Microsoft Word, LaTeX handles this automatically.
+
+The symbol for multiplication is achieved by typing '\textbackslash cdot' within the math environment. The commonly (and incorrectly) used '*' symbol stands for convolution, not multiplication!
+
+Equation~\ref{eq:Ohmsches_Gesetz} shows an example of a correctly formatted formula with numbering and explanation of the variables.
+
+\begin{align}
+	\label{eq:Ohmsches_Gesetz}
+	U &= R \cdot I
+\end{align}
+\vspace*{-1cm}
+\begin{table}[H]
+	\begin{tabular}{@{}p{1cm}@{}p{1cm}<{\dotfill}@{}p{\dimexpr\linewidth-5cm}}
+		& $U$ & Voltage in $V$  \\
+		& $R$ & Resistance in $\Omega$ \\
+		& $I$ & Current in $A$ 
+	\end{tabular}
+\end{table}
+
+The voltage $U$ is calculated using Ohm’s law by multiplying the current $I$ with the resistance $R$.
+
+
+%===============================================================================
+\subsubsection{Numbers and Units}
+\label{sec:numbersAndUnits}
+
+The formatting of numbers must be consistent throughout the entire thesis. The \texttt{siunitx} package is used to automatically format numbers when the \verb|\num{}| command is applied. For example, \verb|\num{1234.75}| will display as \num{1234.75}. Additionally, you can append units using the \verb|\SI{}{}| command. For instance, \verb|\SI{1234,5}{\giga \watthour}| will produce \SI{1234,5}{\giga\watthour}.
+
+If you don't use the \texttt{siunitx}, make sure, that in German-language theses, a dot is usually used as a thousands separator (1.000~kV), though sometimes a non-breaking space (1~000~kV) — achieved with a tilde '$\sim$' in LaTeX — is used. A non-breaking space prevents the number from being split across lines.
+
+A comma is used as the decimal separator (13,76~m).
+
+When copying values from English-language sources, be careful to adapt the thousands and decimal separators correctly, as commas are used for thousands and periods for decimals in English. Mixing formats may lead to ambiguity — for instance, it's unclear whether 8,763 means “eight point seven six three” or “eight thousand seven hundred sixty-three.”
+
+If the thesis is written in English, a period is used for the decimal separator, and a non-breaking space (tilde '$\sim$') is used for thousands.
+
+A non-breaking space (tilde '$\sim$') should be inserted between a number and its unit (e.g., 10~kV), to prevent a line break between them. If you use the \texttt{siunitx} package with the \verb|\SI{}{}| command, this will be handled automatically for you.
