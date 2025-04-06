@@ -1,6 +1,5 @@
-# Template for bachelor und master theses
-Template for bachelor and master theses written at the IEE.
-
+# Template for Bachelor’s and Master’s Theses
+This document is the official LaTeX template of the Institute of Electricity Economics and Energy Innovation (IEE) for Bachelor’s and Master’s theses. It is designed to help students structure and format their work according to the institute’s academic and formatting standards.
 
 <p align="center">
   <img src="figures/Title_page.png" alt="Title_page" width="40%" /></br>
