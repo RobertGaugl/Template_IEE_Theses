@@ -26,6 +26,7 @@ The subsections are in the folder chapters and are organized divided into 3 main
 - CXX_: These chapters contain after-content (Abbreviations, Bibliography, possibly Appendix).
 
 ## Release Notes
+- **2025-04-08:** Automatic adjustment of spacing between title page elements to ensure an aesthetically pleasing layout, even with titles of up to five lines.
 - **2025-04-05:** Translate content to English. Add automatic switching between Bachelor's and Master's theses, as well as between German and English for the title page and other automatic headers and settings.
 - **2025-04-03:** Remove affidavit as it is not allowed anymore because of data protection.
 - **2025-03-28:** Update the title page to include the name of the degree program. Include new subsection Revision nach Korrektur.

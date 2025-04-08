@@ -47,29 +47,67 @@
     \newcommand{\submissiontext}{Graz, \submissionmonth~\submissionyear}
 }
 
+%===============================================================================
+% Calculate spaces between elements depending on length of title
+\newdimen\height
+\newdimen\spaceonedim
+\newdimen\spacetwodim
+\newdimen\tempdimen
+\newdimen\tempdimentwo
+\newcount\scalefactor
+
+\setbox0=\vbox{\LARGE\textbf{\thesistitle}}
+\height=\ht0 \advance\height by \dp0
+
+% Step 1: \tempdimen = \height - 14.5949pt
+\tempdimen=\height
+\advance\tempdimen by -14.5949pt
+
+% Step 2: scale \tempdimen by (192pt / 362pt) = approx 0.530387
+% Since TeX can’t do floating point math, we use fixed-point integer math
+
+% Let's use: (192000 / 362000), multiplying and then dividing
+\tempdimen=\dimexpr \tempdimen * 192 / 362\relax
+\tempdimentwo=\dimexpr \tempdimen * 170 / 362\relax
+
+% Step 3: divide by 4
+\tempdimen=\dimexpr \tempdimen / 3\relax
+\tempdimentwo=\dimexpr \tempdimen / 4\relax
+
+% Step 4: add 48pt
+\spaceonedim=\dimexpr 48pt - \tempdimen\relax
+\spacetwodim=\dimexpr 34pt - \tempdimentwo\relax
+
+\newcommand{\spaceone}{\the\spaceonedim}
+\newcommand{\spacetwo}{\the\spacetwodim}
+
+%===============================================================================
+
 \vspace*{-1.5cm}
 \begin{center}
-    \hspace*{-1.1cm}
     \includegraphics[width=3.3cm]{figures/TU_Graz_Logo.pdf}
     
-    \vspace*{1.5cm}
+    \vspace*{\spaceone}
     
     {\normalsize \textbf{\thesisauthor\\}}
     
-    \vspace*{1.5cm} \LARGE\textbf{\thesistitle}\vspace*{1cm} \vfill
+    \vspace*{\spaceone} 
+    \LARGE\textbf{\thesistitle}
     
+    \vspace*{\spacetwo} 
     \large{\textbf{\thesisdegree\\}}
     
-    \vspace*{1cm}{\normalsize \textone\\}
+    \vspace*{\spacetwo}
+    {\normalsize \textone\\}
     {\normalsize \degreeinfoFull\\}
 
-    \vspace*{1cm}{\normalsize \programinfo\\}
+    \vspace*{\spacetwo}{\normalsize \programinfo\\}
     {\normalsize \studyprogram\\}
 
-    \vspace*{1cm}{\normalsize \texttwo\\}
+    \vspace*{\spacetwo}{\normalsize \texttwo\\}
     \large{\textbf{\universityinfo\\}}
     
-    \vspace*{1.5cm}\large{\textbf{\textthree\\}}
+    \vspace*{\spaceone}\large{\textbf{\textthree\\}}
     {\normalsize \supervisor\\}
 
     % Only for Master's theses
@@ -78,10 +116,11 @@
       {\normalsize \reviewer\\}
     }    
     
-    \vspace*{0.7cm}
+    \vspace*{\spacetwo}
     \normalsize \instituteinfo\\
     
-    \vspace*{1.5cm}\small{\textbf{\submissiontext\\}} \vspace*{.7cm}
+    \vspace*{\spaceone}
+    \small{\textbf{\submissiontext\\}}
     
 \end{center}
 
