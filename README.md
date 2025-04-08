@@ -9,10 +9,11 @@ The LaTeX template was created with Overleaf. TU Graz provides free Overleaf lic
 </p>
 
 ## How to use?
-1) Download the ZIP file using the green 'Code' button.
-2) Extract the ZIP file.
-3) Use the files in your preferred LaTeX editor (we recommend using Overleaf).
-4) Read the content of the template carefully. It explains the rules for writing a bachelor's or master's thesis at the IEE and provides helpful tips and tricks.
+1) Download the ZIP file by clicking the green "**Code**" button and selecting "**Download ZIP**".
+2) Depending on your LaTeX editor:
+  - **Overleaf**: Click **New Project** > **Upload Project**, then select the downloaded ZIP file.
+  - **Other LaTeX editors**: Extract the ZIP file and open the files in your preferred editor.
+3) Read the content of the template carefully. It explains the rules for writing a bachelor's or master's thesis at the IEE and provides helpful tips and tricks.
 
 ## Structure of the template
 
