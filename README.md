@@ -19,13 +19,13 @@ The LaTeX template was created with Overleaf. TU Graz provides free Overleaf lic
 
 At the top of the main.tex file, you'll find the Metadata section, where you need to configure several settings (e.g., specifying whether it's a Bachelor's or Master's thesis, selecting the language, which will affect the title page and other headers and formatting options). Additionally, you will need to enter your name, the title of your thesis, and other relevant information.
 
-Following the Metadata section, the main.tex file defines the page layout, loads the preamble.tex (which contains all the package definitions), and also includes the subsections.
-The subsections are in the folder chapters and are organized divided into 3 main blocks:
-- AXX_: These chapters contain pre-content (Title page, Acknowledgments, Abstract, Table of Contents).
-- BXX_: Main content of the work.
-- CXX_: These chapters contain after-content (Abbreviations, Bibliography, possibly Appendix).
+Following the Metadata section, the main.tex file defines the page layout, loads the preamble.tex (which contains all the package definitions), and includes the main content of the thesis.
 
 ## Release Notes
+- **2026-03-30:**
+   - Moved all content from separate chapter files into main.tex, leveraging Overleaf’s file outline feature for improved navigation and a more streamlined structure.
+   - Added Overleaf diff functionality for automatic comparison between document versions.
+   - Updated Chapter 5 “Highlighting Revisions” to include both manual and automatic revision tracking approaches.
 - **2025-04-08:**
    - Automatic adjustment of spacing between title page elements to ensure an aesthetically pleasing layout, even with titles of up to five lines.
 - **2025-04-05:**

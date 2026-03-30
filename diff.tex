@@ -1,0 +1,14 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Diff-Creator for LaTeX
+% Just replace the two files after the "latexdiff" below. The
+% first file should be the "old" one. Leave everything else as
+% it is (e.g., the "> main-d.tex"). If you compile this code, 
+% the diff will be compiled and shown on the right.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{shellesc}
+\ShellEscape{latexdiff "archive/main_old.tex" "main.tex" > main-d.tex}
+\input{main-d}
+\documentclass{dummy}
+\title{Difference}

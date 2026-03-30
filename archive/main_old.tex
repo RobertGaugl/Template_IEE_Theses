@@ -28,14 +28,15 @@
 % A4 paper size, left-aligned equations, header/footer lines, 12pt font
 %===============================================================================
 \documentclass[a4paper, fleqn, headsepline, footsepline, 12pt, parskip=half]{scrartcl}
+
 % Define content area size
 \areaset{16cm}{27cm}
 
 %===============================================================================
 % Load packages
 %===============================================================================
-\input{preamble} % Load preamble with packages and settings
 
+\input{preamble} % Load preamble with packages and settings
 
 %===============================================================================
 % Start of the actual document
@@ -722,7 +723,7 @@ To use this functionality, compare a previous version of your document with the 
     \item \texttt{main-d.tex}: automatically generated diff file
 \end{itemize}
 
-Open \texttt{diff.tex} and compile it. After compilation, all changes between the two versions are highlighted in the output document. Like this sentence. Note that highlights are only shown when compiling \texttt{diff.tex}. Compiling \texttt{main.tex} will produce the clean version without any highlighted differences.
+Open \texttt{diff.tex} and compile it. After compilation, all changes between the two versions are highlighted in the output document. Note that highlights are only shown when compiling \texttt{diff.tex}. Compiling \texttt{main.tex} will produce the clean version without any highlighted differences.
 
 Note:\\
 The diff functionality requires shell escape to be enabled in Overleaf. In most cases, this is already supported, but it may depend on your project settings.
@@ -977,4 +978,4 @@ Short conclusion of your thesis.
 heading=bibintoc
 ]
 
-\end{document}main.
+\end{document}
