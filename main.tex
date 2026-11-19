@@ -671,7 +671,45 @@ This is an example of a citation~\cite{Hunt2019}.
 
 If you're using a reference management tool like \href{https://www.zotero.org}{Zotero} (recommended) or Mendeley, you can link those reference management tools with Overleaf. In that case, the manual entry described above becomes unnecessary. This is recommended for larger works like Master's theses. You can find an instruction on how to link Zotero with Overleaf on this website: \href{https://www.overleaf.com/learn/how-to/How_to_link_Zotero_to_your_Overleaf_account}{How to link Zotero to your Overleaf account}.
 
-When citing, a distinction is made between direct and indirect (paraphrased) quotations.
+%===============================================================================
+\subsubsection{Different Citation Styles}
+\label{sec:citationStyles}
+
+The template supports different citation commands depending on how the reference should appear in the sentence.
+
+If the authors should appear as part of the sentence, \texttt{\textbackslash citet\{\}} or \texttt{\textbackslash textcite\{\}} should be used. This is useful when the cited study is grammatically integrated into the text.
+
+A typical example is:
+\begin{tcolorbox}[colback=black!5, colframe=black!35, boxrule=0.5pt, sharp corners]
+\begin{verbatim}
+\citet{gaugl2023} demonstrate that rising CO2 prices result in higher 
+electricity prices in Austria.
+\end{verbatim}
+\end{tcolorbox}
+
+This produces a sentence of the following form:
+
+\textit{\citet{gaugl2023} demonstrate that rising CO2 prices result in higher electricity prices in Austria.}
+
+If the reference should only appear as a citation at the end of a statement, \texttt{\textbackslash cite\{\}} or \texttt{\textbackslash citep\{\}} can be used.
+
+
+A typical example is:
+\begin{tcolorbox}[colback=black!5, colframe=black!35, boxrule=0.5pt, sharp corners]
+\begin{verbatim}
+The LEGO model is an energy system optimization model developed at 
+the Institute of Electricity Economics and Energy 
+Innovation. \cite{wogrin2022}
+\end{verbatim}
+\end{tcolorbox}
+
+This produces a sentence of the following form:
+
+\textit{The LEGO model is an energy system optimization model developed at the Institute of Electricity Economics and Energy Innovation. \cite{wogrin2022}}
+
+Use \texttt{\textbackslash cite\{\}} or \texttt{\textbackslash citep\{\}} when you only want the reference number. Use \texttt{\textbackslash citet\{\}} or \texttt{\textbackslash textcite\{\}} when the authors should appear as part of the sentence.
+
+In practice, the choice depends on the role of the citation in the sentence. If the authors are part of the narrative, \texttt{\textbackslash citet\{\}} or \texttt{\textbackslash textcite\{\}} is usually the better option. If the source only documents the preceding statement, \texttt{\textbackslash cite\{\}} or \texttt{\textbackslash citep\{\}} is often more appropriate.
 
 
 %===============================================================================
@@ -683,7 +721,8 @@ A direct quote reproduces the content word for word. It should be enclosed in qu
 Example of a direct quote:
 
 \begin{center}
-		{\glqq}\textit{Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.}{\grqq} \cite{Einstein1941}
+		{\glqq}\textit{Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.}{\grqq} \\
+        \citet{Einstein1941}
 \end{center}
 
 
@@ -707,7 +746,7 @@ This chapter describes how light or solar radiation is converted into electrical
 
 If an \textbf{entire chapter} is based on a \textbf{single source} (this should only be done in exceptional cases), it can be stated as follows:
 
-Unless otherwise indicated, the following chapter is based on the book {\glqq}Grid-Connected Photovoltaic Systems{\grqq} by Jürgen Schlabbach~\cite{Schlabbach2011}.
+Unless otherwise indicated, the following chapter is based on the book {\glqq}Grid-Connected Photovoltaic Systems{\grqq} by \citet{Schlabbach2011}.
 
 
 %% =============================================================================

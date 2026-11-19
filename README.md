@@ -24,6 +24,7 @@ Following the Metadata section, the main.tex file defines the page layout, loads
 ## Release Notes
 - **2026-11-19:**
    - Add Declaration of AI use
+   - Add chapter Different Citation Styles
 - **2026-03-30:**
    - Move all content from separate chapter files into main.tex, leveraging Overleaf’s file outline feature for improved navigation and a more streamlined structure.
    - Add Overleaf diff functionality for automatic comparison between document versions.
