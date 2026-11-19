@@ -49,12 +49,34 @@
 %% =============================================================================
 %% TITLE PAGE ==================================================================
 \include{frontmatter/title_page} % Do not change anything in the title_page.tex itself.
-\blankpage
+
+%% =============================================================================
+%% AI USAGE DECLARATION ========================================================
+% Example declaration. Adapt the tools, sections and tasks to your actual use.
+% If you used no AI tools, replace the example with a sentence stating that.
+\thispagestyle{empty}
+\vspace*{\fill}
+\begingroup
+\small
+\ifthenelse{\equal{\documentlanguage}{german}}{%
+    \noindent\textbf{Erklärung zum Einsatz von KI }\par
+    \smallskip
+    \noindent 
+    Ich habe ChatGPT von OpenAI (Version GPT-6.1, November 2026) verwendet, um Grammatik- und Rechtschreibfehler zu korrigieren und die Verständlichkeit des Manuskripts zu verbessern. Außerdem habe ich ChatGPT zur Unterstützung bei der Programmierung und der Erstellung von Abbildungen eingesetzt. Bei jedem Vorschlag, den ich übernommen habe, habe ich geprüft, ob er meine beabsichtigte fachliche Aussage korrekt wiedergibt. Für sämtliche Inhalte und Schlussfolgerungen dieser Arbeit trage ich die alleinige Verantwortung.\todo{Adapt to your usage of AI!}
+    \par
+}{%
+    \noindent\textbf{Declaration of AI use}\par
+    \smallskip
+    \noindent 
+    I used OpenAI's ChatGPT (version GPT-6.1, November 2026) to help me correct grammar and spelling and improve the clarity of the manuscript. I also used it to assist with coding and the preparation of figures. I checked each suggestion I adopted to ensure that it preserved my intended technical meaning. I take sole responsibility for all content and conclusions presented in this thesis.\todo{Adapt to your usage of AI!}
+    \par
+}
+\endgroup
+\clearpage
 
 % Disable headers and footers, use Roman page numbers for front matter
 \pagestyle{plain}
 \pagenumbering{roman}
-
 
 %% =============================================================================
 %% Acknowledgements ============================================================
@@ -112,7 +134,6 @@ A general summary of the content of the thesis. It should not simply be a summar
 \label{sec:introduction}
 
 This chapter aims to explain why your research question is of interest. In addition, general explanations regarding your thesis can be described here, or an overview of current technologies can be provided. A ToDo can be inserted with the command \textbackslash todo\{text\} \todo{This is a sample ToDo.}.
-
 
 %===============================================================================
 \subsection{Subchapter}

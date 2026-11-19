@@ -22,10 +22,12 @@ At the top of the main.tex file, you'll find the Metadata section, where you nee
 Following the Metadata section, the main.tex file defines the page layout, loads the preamble.tex (which contains all the package definitions), and includes the main content of the thesis.
 
 ## Release Notes
+- **2026-11-19:**
+   - Add Declaration of AI use
 - **2026-03-30:**
-   - Moved all content from separate chapter files into main.tex, leveraging Overleaf’s file outline feature for improved navigation and a more streamlined structure.
-   - Added Overleaf diff functionality for automatic comparison between document versions.
-   - Updated Chapter 5 “Highlighting Revisions” to include both manual and automatic revision tracking approaches.
+   - Move all content from separate chapter files into main.tex, leveraging Overleaf’s file outline feature for improved navigation and a more streamlined structure.
+   - Add Overleaf diff functionality for automatic comparison between document versions.
+   - Update Chapter 5 “Highlighting Revisions” to include both manual and automatic revision tracking approaches.
 - **2025-04-08:**
    - Automatic adjustment of spacing between title page elements to ensure an aesthetically pleasing layout, even with titles of up to five lines.
 - **2025-04-05:**
